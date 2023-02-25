@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cena 01</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        html {
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+
+        }
+        main {
+            display: block;
+        }
+        #game {
+            height: 70vh;
+            width: 100%;
+            background-image: linear-gradient(to bottom, blue, green);
+            position: relative;
+        }
+        #animation {
+            border: 1px solid black;
+            height: 31vh;
+            width: 100%;
+        }
+        #machine {
+            background-color: gray;
+            position: absolute;
+            width: 60%;
+            height: 50%;
+            user-select: none;
+            border: 1px solid black;
+            border-radius: 15% 15% 0px 0px;
+            overflow: hidden;
+            left: 50%;
+            bottom: 5px;
+            transform: translate(-50%);
+        }
+        #paper {
+            font-family: cursive;
+            font-size: .8em;
+            background-color: antiquewhite;
+            padding: 5px;
+            width: 75px;
+            height: 100px;
+            position: absolute;
+            left: 10px;
+            top: 5px;
+        }
+        #red-button {
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            border-radius: 100%;
+            margin: 10px;
+            display: inline-block;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            bottom: 5px;
+            left: 18%;
+        }
+        #red-button:active {
+            width: 45px;
+            height: 45px;
+            box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.3);
+            margin-left: 15px;
+        }
+        #green-button {
+            height: 50px;
+            width: 50px;
+            background-color: green;
+            border-radius: 100%;
+            margin: 10px;
+            display: inline-block;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            bottom: 5px;
+            right: 18%;
+        }
+        #green-button:active {
+            width: 45px;
+            height: 45px;
+            box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.3);
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="black"></div>
+    <main>
+        <article id="game">
+            <div id="machine">
+                <div id="paper">Instruções <br> 1: botão verde <br> 2: botão vermelho
+                </div>
+                <div id="red-button"></div>
+                <div id="green-button"></div>
+            </div>
+        </article>
+        <canvas id="animation"></canvas>
+    </main>
+    
+    <script type="module">
+
+        import {sceneTransition} from '../../animations.js'
+
+        document.querySelector('#red-button').addEventListener('click', function(){addRed()})
+        document.querySelector('#green-button').addEventListener('click', function(){addGreen()})
+        scroll(20000, 20000)
+        let canvas = document.querySelector('#animation')
+        let context = canvas.getContext('2d')
+        let imgSize = canvas.width  / 100 * 50
+        let img = new Image()
+        img.src = '../../animations/guy_complete.png'
+        img.onload = function(){
+            context.drawImage(img, canvas.width / 2 - imgSize / 2, canvas.height-imgSize, imgSize, imgSize)
+        }
+        
+        let redButton = 0
+        let greenButton = 0
+        function addRed(){
+            if (greenButton == 0){
+                cutHead()
+                redButton = 3
+                greenButton = 3
+            }
+            else {
+                redButton = 3
+                greenButton = 3
+                sceneTransition('../../index.html', false)
+            }
+            
+            
+        }
+        function addGreen(){
+            if (greenButton == 1){
+                cutHead()
+                redButton = 3
+                greenButton = 3
+            }
+            else {
+                greenButton = 1
+            }
+        }
+
+        const arrayImgs = []
+        for (let i = 0; i <= 30; i++){
+            if (i < 10){
+                let newImg = new Image()
+                newImg.src = `../../animations/no-head/nohead0${i}.png`
+                arrayImgs.push(newImg)
+            }
+            else {
+                let newImg = new Image()
+                newImg.src = `../../animations/no-head/nohead${i}.png`
+                arrayImgs.push(newImg)
+            }
+        }
+
+
+        
+
+        let indice = 0
+        let anim = true
+        function cutHead(){
+            if(anim){
+                if (indice < arrayImgs.length -1){
+                    context.clearRect(0, 0, canvas.width, canvas.height)
+                    context.drawImage(arrayImgs[Math.ceil(indice)], canvas.width / 2 - imgSize / 2, canvas.height-imgSize, imgSize, imgSize)
+                    indice += 0.25
+                }
+                else {
+                    anim = false
+                    sceneTransition('../../index.html', false)
+                }
+                requestAnimationFrame(cutHead);
+            }
+        }
+    </script>
+</body>
+</html>
