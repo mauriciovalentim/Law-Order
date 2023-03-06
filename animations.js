@@ -2,22 +2,22 @@ export function sceneTransition(target, create = true) {
 
     if (create){
         let body = document.querySelector('body')
-        body.innerHTML = '<div id="black"></div>' + body.innerHTML
+        body.innerHTML = '<div id="blackScreen"></div>' + body.innerHTML
     }
-    let black = document.querySelector('#black')
-    black.style.display = 'block'
-    black.style.position = 'absolute'
-    black.style.background = 'rgba(0, 0, 0, 0)'
-    black.style.height = '101vh'
-    black.style.width = '100vw'
-    black.style.zIndex = '10'
-    black.style.left = '0px'
-    black.style.top = '0px'
-    black.style.setProperty('transition', '1s')
+    let blackScreen = document.querySelector('#blackScreen')
+    blackScreen.style.display = 'block'
+    blackScreen.style.position = 'absolute'
+    blackScreen.style.background = 'rgba(0, 0, 0, 0)'
+    blackScreen.style.height = '101vh'
+    blackScreen.style.width = '100vw'
+    blackScreen.style.zIndex = '11'
+    blackScreen.style.left = '0px'
+    blackScreen.style.top = '0px'
+    blackScreen.style.setProperty('transition', '1s')
     let i = 0.0
     const myInterval = setInterval(function(){
         i += 0.1
-        document.querySelector('#black').style.background = `rgba(0, 0, 0, ${i})`
+        document.querySelector('#blackScreen').style.background = `rgba(0, 0, 0, ${i})`
         if (i >= 2.5) {
             clearInterval(myInterval)
             document.location.href = target

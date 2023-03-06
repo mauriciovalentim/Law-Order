@@ -27,7 +27,7 @@
         }
         #animation {
             border: 1px solid black;
-            height: 32vh;
+            height: 30vh;
             width: 100%;
         }
         #machine {
@@ -93,7 +93,7 @@
     </style>
 </head>
 <body>
-    <div id="black"></div>
+    <div id="blackScreen"></div>
     <main>
         <article id="game">
             <div id="machine">
@@ -112,7 +112,7 @@
 
         document.querySelector('#red-button').addEventListener('click', function(){addRed()})
         document.querySelector('#green-button').addEventListener('click', function(){addGreen()})
-        scroll(20000, 20000)
+        scroll(0, 100)
         let canvas = document.querySelector('#animation')
         let context = canvas.getContext('2d')
         let imgSize = canvas.width  / 100 * 50

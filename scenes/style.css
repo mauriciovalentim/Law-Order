@@ -1,0 +1,217 @@
+@charset "utf-8";
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html {
+    height: 100vw;
+    overflow: hidden;
+}
+#options {
+    padding: 10px;
+    height: 50vh;
+}
+p {
+    width: 100%;
+    margin: 0px auto 5px auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    user-select: none;
+
+}
+
+/*p:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(172, 255, 47, 0.3);
+    background-color: aquamarine;
+}*/
+
+.question {
+    height: 22%;
+    background-color: aqua;
+}
+
+.answer {
+    height: 18%;
+    background-color: lightgreen;
+}
+#animation {
+    pointer-events: none;
+    border: 1px solid black;
+    width: 100vw;
+    height: 50vh;
+    background-color: yellow; /*Apagar depois*/
+
+}
+
+#game-over {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    left: 0px;
+    top: 0px;
+    transition: 2s;
+    transition-timing-function: ease;
+}
+
+#game-over > #game-over-buttons {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease 2s;
+}
+
+@keyframes slideInLeft {
+    from {
+        border: 3px solid rgba(253, 253, 253, 0);
+        color: rgba(253, 253, 253, 0);
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(0);
+        border: 3px solid white;
+        color: white;
+    }
+    
+}
+@keyframes slideInRight {
+    from {
+        border: 3px solid rgba(253, 253, 253, 0);
+        color: rgba(253, 253, 253, 0);
+        transform: translateX(200px);
+    }
+    to {
+        transform: translateX(0);
+        border: 3px solid white;
+        color: white;
+    }
+    
+}
+#game-over-buttons > .material-symbols-outlined {
+    display: none;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    color: rgba(255, 255, 255, 0);
+    font-size: 7em;
+    text-align: center;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    user-select: none;
+    margin: 15px auto;
+    color: white;
+    
+    /*transition: transform 0.1s, color 0.1s, background-color 0.1s;*/
+}
+
+#game-over-buttons > #restart {
+    transition: transform 0.1s, color 0.1s, background-color 0.1s;
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-timing-function: none;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+
+#game-over-buttons > #back-menu {
+    transition: transform 0.1s, color 0.1s, background-color 0.1s;
+    animation-name: slideInRight;
+    animation-duration: 1s;
+    animation-timing-function: none;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+
+
+/*Falta testar a melhor interação*/
+
+#game-over-buttons > .material-symbols-outlined:active {
+    color: gray;
+    background-color: white;
+}
+
+#game-over-buttons > .material-symbols-outlined:active {
+    transform: translate(0, 5%);
+}
+
+@keyframes openGrowIcon {
+    from {
+        width: 1px;
+        height: 1px;
+    }
+    to {
+        width: 100px;
+        height: 100px;
+    }
+    
+}
+@keyframes openGrowFont {
+    from {
+        font-size: 3em;
+    }
+    to {
+        font-size: 5em;
+    }
+    
+}
+
+div#game-result {
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(252, 252, 252);
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 100%;
+    position: absolute;
+    transition: transform 0.1s, color 0.1s, background-color 0.1s;
+    animation-name: openGrowIcon;
+    animation-duration: 0.15s;
+    animation-timing-function: none;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+
+
+div#game-result > .material-symbols-outlined {
+    display: none;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    font-size: 5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s, color 0.1s, background-color 0.1s;
+    animation-name: openGrowFont;
+    animation-duration: 0.15s;
+    animation-timing-function: none;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+
+div#game-result > #positive {
+    color: rgb(20, 219, 47);
+    
+}
+div#game-result > #negative {
+    color: rgb(245, 58, 58);
+}
