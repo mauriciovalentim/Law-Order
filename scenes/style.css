@@ -181,8 +181,8 @@ div#game-result {
     animation-direction: normal;
     animation-fill-mode: none;
     
-    top: 50vw;
-    left: 50vh;
+    top: 50vh;
+    left: 50vw;
     transform: translate(-50%, -50%);
     
 }
