@@ -6,7 +6,7 @@
 }
 html {
     height: 100vw;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 #options {
     padding: 10px;
