@@ -181,8 +181,8 @@ div#game-result {
     animation-direction: normal;
     animation-fill-mode: none;
     
-    top: 50%;
-    left: 50%;
+    top: 50vw;
+    left: 50vh;
     transform: translate(-50%, -50%);
     
 }
@@ -194,8 +194,8 @@ div#game-result > .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
     font-size: 5em;
     position: absolute;
-    top: 50vh;
-    left: 50vw;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     transition: transform 0.1s, color 0.1s, background-color 0.1s;
