@@ -68,7 +68,7 @@ main {
     background-color: rgba(255, 238, 0, 0.5);
     z-index: 10;
     width: 100vw;
-    height: 100%;
+    height: 60%;
     left: 0px;
     bottom: 0px;
     /*transition: 1s;
