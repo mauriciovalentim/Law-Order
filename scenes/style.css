@@ -41,7 +41,7 @@ p {
 }
 
 main {
-    height: 100dvh;
+    height: 100vh;
 }
 
 #options {
@@ -63,22 +63,22 @@ main {
 
 
 #blackScreen {
-    display: block;
+    display: none;
     position: absolute;
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 10;
     width: 100vw;
-    height: 60%;
+    height: 100%;
     left: 0px;
-    top: 50%;
-    /*transition: 1s;
-    transition-timing-function: ease;*/
+    top: 0px;
+    transition: 1s;
+    transition-timing-function: ease; 
 }
 
 #game-over {
     display: none;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.0);
     height: 100%;
     width: 100%;
     z-index: 10;
