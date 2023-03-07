@@ -70,7 +70,7 @@ main {
     width: 100vw;
     height: 60%;
     left: 0px;
-    bottom: 0px;
+    top: 50%;
     /*transition: 1s;
     transition-timing-function: ease;*/
 }
