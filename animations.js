@@ -4,16 +4,16 @@ export function sceneTransition(target, create = true) {
         let body = document.querySelector('body')
         body.innerHTML = '<div id="blackScreen"></div>' + body.innerHTML
     }
-    let blackScreen = document.querySelector('#blackScreen')
+    /*let blackScreen = document.querySelector('#blackScreen')
     blackScreen.style.display = 'block'
     blackScreen.style.position = 'absolute'
     blackScreen.style.background = 'rgba(0, 0, 0, 0)'
-    blackScreen.style.height = '190vh'
+    blackScreen.style.height = '100vh'
     blackScreen.style.width = '100vw'
     blackScreen.style.zIndex = '11'
     blackScreen.style.left = '0px'
     blackScreen.style.top = '0px'
-    blackScreen.style.setProperty('transition', '1s')
+    blackScreen.style.setProperty('transition', '1s')*/
     let i = 0.0
     const myInterval = setInterval(function(){
         i += 0.1

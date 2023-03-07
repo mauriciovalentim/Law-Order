@@ -6,19 +6,15 @@
     user-select: none;
 }
 html {
+    font-size: 100%;
+}
+body {
     height: 100vh;
     width: 100vw;
-    /*overflow: hidden;*/
-}
-/*body {
     max-width: 100%;
     max-height: 100%;
-}*/
-#options {
-    padding: 10px;
-    height: 50vh;
-    width: 100vw;
 }
+
 p {
     width: 100%;
     margin: 0px auto 5px auto;
@@ -43,15 +39,40 @@ p {
     height: 18%;
     background-color: lightgreen;
 }
+
+main {
+    height: 100vh;
+}
+
+#options {
+    padding: 10px;
+    height: 50%;
+    width: 100vw;
+}
+
 #animation {
     display: block;
     margin: auto;
     pointer-events: none;
     border: 1px solid black;
     width: 100vw;
-    height: 50vh;
+    height: 50%;
     background-color: yellow; /*Apagar depois*/
+}
 
+
+
+#blackScreen {
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.315);
+    z-index: 10;
+    width: 100vw;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    transition: 1s;
+    transition-timing-function: ease; 
 }
 
 #game-over {
@@ -105,7 +126,7 @@ p {
     display: none;
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
     color: rgba(255, 255, 255, 0);
-    font-size: 7em;
+    font-size: 7rem;
     text-align: center;
     border: 3px solid rgb(255, 255, 255);
     border-radius: 15px;
@@ -162,10 +183,10 @@ p {
 }
 @keyframes openGrowFont {
     from {
-        font-size: 3em;
+        font-size: 3rem;
     }
     to {
-        font-size: 5em;
+        font-size: 5rem;
     }
     
 }
@@ -199,7 +220,7 @@ div#game-result {
 div#game-result > .material-symbols-outlined {
     display: none;
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
-    font-size: 5em;
+    font-size: 5rem;
     position: absolute;
     top: 50%;
     left: 50%;
