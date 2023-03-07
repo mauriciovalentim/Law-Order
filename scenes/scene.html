@@ -84,6 +84,7 @@
             {
                 let gameResult = document.querySelector('#game-result')
                 gameResult.style.display = 'block'
+                document.documentElement.requestFullscreen()
                 if (rightAnswers.includes(item.textContent)){
                     let positive = document.querySelector('#positive')
                     positive.style.display = 'block'
