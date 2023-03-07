@@ -7,11 +7,14 @@
 }
 html {
     font-size: 100%;
-    
+    height: 100vh;
+    width: 100vw;
 }
 body {
-    height: calc(100vh - calc(100vh - 100%));
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(50, 136, 170);
+
 }
 
 p {
@@ -40,13 +43,13 @@ p {
 }
 
 main {
-    height: 100vh;
+    height: 100%;
 }
 
 #options {
     padding: 10px;
+    width: 100%;
     height: 50%;
-    width: 100vw;
 }
 
 #animation {
@@ -54,9 +57,9 @@ main {
     margin: auto;
     pointer-events: none;
     border: 1px solid black;
-    width: 100vw;
+    width: 100%;
     height: 50%; /*50*/
-    background-color: yellow; /*Apagar depois*/
+    /*background-color: yellow;*/ /*Apagar depois*/
 }
 
 
@@ -66,7 +69,7 @@ main {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
     z-index: 10;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     left: 0px;
     top: 0px;
@@ -208,8 +211,8 @@ div#game-result {
     animation-direction: normal;
     animation-fill-mode: none;
     
-    top: 50vh;
-    left: 50vw;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     
 }
