@@ -56,7 +56,7 @@ main {
     pointer-events: none;
     border: 1px solid black;
     width: 100vw;
-    height: 45%; /*50*/
+    height: 15%; /*50*/
     background-color: yellow; /*Apagar depois*/
 }
 
