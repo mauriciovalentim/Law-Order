@@ -39,7 +39,6 @@
     <script type="module">
         import {sceneTransition} from '../animations.js'
 
-        window.scrollTo(0,10000)
         //Passar como parametro
         const imagem = '../animations/fire_animation/stand0.png'
         const arrayImgs = []
@@ -84,7 +83,6 @@
             {
                 let gameResult = document.querySelector('#game-result')
                 gameResult.style.display = 'block'
-                document.documentElement.requestFullscreen()
                 if (rightAnswers.includes(item.textContent)){
                     let positive = document.querySelector('#positive')
                     positive.style.display = 'block'
