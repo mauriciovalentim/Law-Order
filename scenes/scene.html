@@ -28,7 +28,7 @@
         </div>
         <article id="options">
             <div class="question-box">
-                <p class="question">Qual o nome da escada do porteiro?</p>
+                <p id="question"></p>
             </div>
             <div class="answer-box">
                 <div class="answer-n">1</div>
@@ -61,21 +61,22 @@
             newImg.src = `../animations/fire_animation/sprite_${i}.png`
             arrayImgs.push(newImg)
         }
+        let question = 'Pedro foi recentemente contratado como estagiário e deve operar em um painel elétrico onde existem alguns componentes que necessitam de manutenção. No aparelho existem regiões do painel que estão expostas e em contato direto com o ar ainda há um problema com um dos cabos de alimentação que não está ligado diretamente ao terra do aparelho. O equipamento nunca teve manutenção preventiva, e sua última preditiva fora a 4 meses atrás; escolha a opção correta abaixo:'
         let options = [
             {
-                text: "CORRETO sldsovmsdovmsdvmsdovomsdlvsdvmsdlvsd vsmdvlsdmvsdlvmsdlvmsdlvms vmsldvmsdvmlsdvlmsdlvmsldvsldvldsvdvsldvlsdvldvlsdvldlvsdvldslvssldvlsdvsdlmvldvsldvdslvsdvmlsdvsldvmsdlmvsdlmvsdlvmsdlv termino",
-                isRight: true
-            }, 
-            {
-                text: "ERRADO",
+                text: "Operar mesmo assim; uma tensão eficaz de 220 V não apresenta risco",
                 isRight: false
             }, 
             {
-                text: "ERRADO",
+                text: "Segundo a NR12, existem painéis que não são necessários o aterramento; logo, pode sim operar.",
                 isRight: false
             }, 
             {
-                text: "CORRETO",
+                text: "Basta não entrar em contato com as regiões vivas e pode-se sim operar.",
+                isRight: false
+            }, 
+            {
+                text: "Enviar o painel para outro setor e informar aos responsáveis, máquina está fora de cogitação operação.",
                 isRight: true
             }
         ]
@@ -86,6 +87,8 @@
         let rightAnswers = options.filter((item) => item.isRight)
         rightAnswers = rightAnswers.map(item => item.text)
 
+        const questionText = document.querySelector('#question')
+        questionText.textContent = question
         const answers = document.querySelectorAll('.answer')
         answers.forEach(defineAnswers)
 

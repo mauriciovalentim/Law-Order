@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 * {
     padding: 0px;
@@ -14,24 +14,24 @@ html {
     width: 100vw;
 }
 body {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto', sans-serif;
     height: 100%;
     width: 100%;
-    background-color: rgb(50, 136, 170);
-
+    background-color: #f1f8d1;
 }
 
 #options > div {
     width: 100%;
     margin: 0px auto 5px auto;
-    padding: 5px;
     
 }
 
 .question-box {
     height: 22%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(98, 141, 235);
     border-radius: 5px 1px 5px 1px;
+    padding: 11px;
+    
 }
 
 
@@ -39,29 +39,42 @@ body {
 .answer-box {
     /*border: 1px solid black;*/
     height: 18%;
-    background-color: lightgreen;
+    background-image: linear-gradient(to right, rgb(83, 226, 83), lightgreen);
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
     border-radius: 1px 5px 5px 5px;
+    padding: 5px;
 }
 
-.question {
+.answer-box:active {
+    transform: translateY(1.5px);
+    margin-bottom: 10px;
+}
+
+#question {
     font-size: 1rem;
-    
+    color: white;
+    width: 100%;
+    height: 100%;
+    overflow-wrap: break-word;
+    overflow: auto;
+    text-align: justify;
+    padding-right: 5px;
 }
 
 .answer-n {
     display: inline-block;
     font-size: 2rem;
     text-align: center;
-    height: 100%;
+    height: 110%;
     width: 10%;
     background-color: blueviolet;
-    color: white;
+    color: rgb(253, 237, 191);
     margin: 0%;
     position: relative;
     top: -5px;
     padding: 5px;
     border-radius: 0px 0px 3px 3px;
+    box-shadow: 0px 0px 2px black;
 }
 
 .answer {
@@ -73,6 +86,10 @@ body {
     vertical-align:top;
     color: rgb(0, 0, 0);
     overflow-y: auto;
+    text-align: justify;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-weight: 100;
 }
 
 ::-webkit-scrollbar {
@@ -81,7 +98,15 @@ body {
 
 ::-webkit-scrollbar-thumb {
     width: 5px;
-    background-color: rgba(137, 43, 226, 0.61);
+    border-radius: 10px;
+}
+
+.answer-box > ::-webkit-scrollbar-thumb {
+    background-color: rgba(137, 43, 226, 0.65);
+}
+
+.question-box > ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 254, 255, 0.65);
 }
 
 ::-webkit-scrollbar-thumb:hover {
