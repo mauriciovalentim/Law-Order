@@ -73,24 +73,34 @@
         {
             sceneTransition('scenes/scene.html')
         }
-        function mudar(){
-            firstContent.style.display = 'none'
-            main.style.width = '100%'
-            main.style.height = '60%'
-            main.style.borderRadius = '0px'
-            main.style.boxShadow = '0px 2px 2px rgba(0, 0, 0, 0.3)'
-            backPage.style.display = 'inline-block'
-            selectScenes.style.display = 'block'
-            startMenu.style.display = 'none'
+        function mudar()
+        {
+            setTimeout(change, 250)
+            function change()
+            {
+                firstContent.style.display = 'none'
+                main.style.width = '100%'
+                main.style.height = '60%'
+                main.style.borderRadius = '0px'
+                main.style.boxShadow = '0px 2px 2px rgba(0, 0, 0, 0.3)'
+                backPage.style.display = 'inline-block'
+                selectScenes.style.display = 'block'
+                startMenu.style.display = 'none'
+            }
         }
-        function voltarPagina(){
-            firstContent.style.display = 'block'
-            main.style.width = '80%'
-            main.style.height = '50%'
-            main.style.borderRadius = '15px'
-            backPage.style.display = 'none'
-            selectScenes.style.display = 'none'
-            startMenu.style.display = 'block'
+        function voltarPagina()
+        {
+            setTimeout(changePage, 250)
+            function changePage()
+            {
+                firstContent.style.display = 'block'
+                main.style.width = '80%'
+                main.style.height = '50%'
+                main.style.borderRadius = '15px'
+                backPage.style.display = 'none'
+                selectScenes.style.display = 'none'
+                startMenu.style.display = 'block'
+            }
         }
     </script>
 </body>

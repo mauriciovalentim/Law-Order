@@ -139,7 +139,7 @@ main {
 }
 
 #game-over-buttons > #restart {
-    transition: transform 0.1s, color 0.1s, background-color 0.1s;
+    transition: transform 0.2s, color 0.1s, background-color 0.1s;
     animation-name: slideInLeft;
     animation-duration: 0.7s;
     animation-timing-function: none;
@@ -150,7 +150,7 @@ main {
 }
 
 #game-over-buttons > #back-menu {
-    transition: transform 0.1s, color 0.1s, background-color 0.1s;
+    transition: transform 0.2s, color 0.1s, background-color 0.1s;
     animation-name: slideInRight;
     animation-duration: 0.7s;
     animation-timing-function: none;
@@ -166,9 +166,6 @@ main {
 #game-over-buttons > .material-symbols-outlined:active {
     color: gray;
     background-color: white;
-}
-
-#game-over-buttons > .material-symbols-outlined:active {
     transform: translate(0, 5%);
 }
 
