@@ -1,4 +1,7 @@
 @charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 * {
     padding: 0px;
     margin: 0px;
@@ -11,35 +14,78 @@ html {
     width: 100vw;
 }
 body {
+    font-family: 'Roboto Mono', monospace;
     height: 100%;
     width: 100%;
     background-color: rgb(50, 136, 170);
 
 }
 
-p {
+#options > div {
     width: 100%;
     margin: 0px auto 5px auto;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-
+    padding: 5px;
+    
 }
 
-/*p:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 5px rgba(172, 255, 47, 0.3);
-    background-color: aquamarine;
-}*/
+.question-box {
+    height: 22%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px 1px 5px 1px;
+}
+
+
+
+.answer-box {
+    /*border: 1px solid black;*/
+    height: 18%;
+    background-color: lightgreen;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 1px 5px 5px 5px;
+}
 
 .question {
-    height: 22%;
-    background-color: aqua;
+    font-size: 1rem;
+    
+}
+
+.answer-n {
+    display: inline-block;
+    font-size: 2rem;
+    text-align: center;
+    height: 100%;
+    width: 10%;
+    background-color: blueviolet;
+    color: white;
+    margin: 0%;
+    position: relative;
+    top: -5px;
+    padding: 5px;
+    border-radius: 0px 0px 3px 3px;
 }
 
 .answer {
-    height: 18%;
-    background-color: lightgreen;
+    display: inline-block;
+    font-size: 1rem;
+    overflow-wrap: break-word;
+    width: 87%;
+    height: 100%;
+    vertical-align:top;
+    color: rgb(0, 0, 0);
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: rgba(137, 43, 226, 0.61);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(207, 17, 17, 0.61);
 }
 
 main {
