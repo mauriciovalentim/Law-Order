@@ -33,20 +33,20 @@
                 </div>
                 <div id="scenes">
                     <div>
-                        <div id="scene1"></div>
-                        <p>Cena 1</p>
+                        <div class="icons"></div>
+                        <p class="titles">Cena 1</p>
                     </div>
                     <div>
-                        <div></div>
-                        <p>Cena 2</p>
+                        <div class="icons"></div>
+                        <p class="titles">Cena 2</p>
                     </div>
                     <div>
-                        <div></div>
-                        <p>Cena 3</p>
+                        <div class="icons"></div>
+                        <p class="titles">Cena 3</p>
                     </div>
                     <div>
-                        <div></div>
-                        <p>Cena 4</p>
+                        <div class="icons"></div>
+                        <p class="titles">Cena 4</p>
                     </div>
                 </div>
                 <div id="next-scenes">
@@ -58,20 +58,90 @@
         </article>
     </main>
     <script type="module">
+        function grid(){
+            let start = 0
+            go()
+            function go()
+            {
+                let levelTitles = document.querySelectorAll('.titles')
+                let levelIcons = document.querySelectorAll('.icons')
+                levelTitles.forEach(define)
+                function define(item, index){
+                    item.textContent = `Cena ${start + index + 1}`
+                }
+                
+                levelIcons.forEach(defineIcons)
+                function defineIcons(item, index)
+                {
+                    if ((start+index+1) <= levels.length)
+                    {
+                        item.style.background = `blue url(${levels[0].drawning}) no-repeat center center`
+                        item.style.backgroundSize = 'contain'
+                        item.id = levels[start+index].id
+                        item.addEventListener('click', goToScene)
+                    }
+                    else 
+                    {
+                        item.removeEventListener('click', goToScene)
+                        item.style.background = 'rgba(199, 197, 197, 0.4)'
+                        item.style.backgroundSize = 'none'
+                        item.id = 'none'
+                    }
+                }
+                displayArrow()
+            }
+            function changeOrder(orientation){
+                if (orientation){
+                    start += 4
+                }
+                else {
+                    start -= 4
+                }
+                go()
+            }
+            function displayArrow(){
+                if (start == 0){
+                    document.querySelector('#back-scenes').style.display = 'none'
+                }
+                else {
+                    document.querySelector('#back-scenes').style.display = 'block'
+                }
+                if (start + 4 > levels.length-1){
+                    document.querySelector('#advance-scenes').style.display = 'none'
+                }
+                else {
+                    document.querySelector('#advance-scenes').style.display = 'block'
+                }
+            }
+            return changeOrder
+        }
+
+        import {getLevels} from './levels.js'
+        const levels = getLevels()
+
+        document.querySelector('#advance-scenes').addEventListener('click', function(){grid1(true)})
+        document.querySelector('#back-scenes').addEventListener('click', function(){grid1(false)})
+
         import {sceneTransition} from './animations.js'
 
-        document.querySelector('#scene1').addEventListener('click', function(){ir()})
+        const grid1 = grid()
+        /*document.querySelector('#scene1').addEventListener('click', function(){ir()})*/
         document.querySelector('#start').addEventListener('click', function(){mudar()})
         
+        function goToScene(event){
+            ir(event.target.id)
+        }
+
+
         let main = document.querySelector('#main')
         let firstContent = document.querySelector('#start-menu')
         let backPage = document.querySelector('#back-page')
         backPage.addEventListener('click', function(){voltarPagina()})
         let selectScenes = document.querySelector('#select-menu')
         let startMenu = document.querySelector('#start-menu')
-        function ir()
+        function ir(id)
         {
-            sceneTransition('scenes/scene.html')
+            sceneTransition('scenes/scene.html?'+id)
         }
         function mudar()
         {

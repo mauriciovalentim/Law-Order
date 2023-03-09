@@ -8,10 +8,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="level-style.css">
     <title>Document</title>
-    </style>
 </head>
+<script src="levelBuild.js" type="module" defer></script>
 <body>
     <main>
         <div id="game-result">
@@ -50,7 +50,7 @@
         
         <canvas id="animation"></canvas>
     </main>
-    <script type="module">
+    <!--<script type="module">
         import {sceneTransition} from '../animations.js'
 
         //Passar como parametro
@@ -98,17 +98,27 @@
 
             function winTest()
             {
-                let gameResult = document.querySelector('#game-result')
-                gameResult.style.display = 'block'
                 if (rightAnswers.includes(item.textContent)){
-                    let positive = document.querySelector('#positive')
-                    positive.style.display = 'block'
-                    setTimeout(endGameScreen, 500)
+                    setTimeout(win, 100)
+                    function win(){
+                        let gameResult = document.querySelector('#game-result')
+                        gameResult.style.animationName = 'openIcon'
+                        gameResult.style.display = 'block'
+                        let positive = document.querySelector('#positive')
+                        positive.style.display = 'block'
+                        setTimeout(endGameScreen, 500)
+                    }
                 }
                 else {
-                    let negative = document.querySelector('#negative')
-                    negative.style.display = 'block'
-                    setTimeout(startAnimation, 500)
+                    setTimeout(defeat, 100)
+                    function defeat(){
+                        let gameResult = document.querySelector('#game-result')
+                        gameResult.style.animationName = 'closeIcon'
+                        gameResult.style.display = 'block'
+                        let negative = document.querySelector('#negative')
+                        negative.style.display = 'block'
+                        setTimeout(startAnimation, 500)
+                    }
                 }
             }
         }
@@ -198,6 +208,6 @@
             }
                 
         }
-    </script>
+    </script>-->
 </body>
 </html>
