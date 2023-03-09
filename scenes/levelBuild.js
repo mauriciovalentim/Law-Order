@@ -30,7 +30,7 @@ function defineAnswers(item, index){
     function winTest()
     {
         if (rightAnswers.includes(item.textContent)){
-            setTimeout(win, 100)
+            setTimeout(win, 250)
             function win(){
                 let gameResult = document.querySelector('#game-result')
                 gameResult.style.animationName = 'openIcon'
@@ -41,7 +41,7 @@ function defineAnswers(item, index){
             }
         }
         else {
-            setTimeout(defeat, 100)
+            setTimeout(defeat, 250)
             function defeat(){
                 let gameResult = document.querySelector('#game-result')
                 gameResult.style.animationName = 'closeIcon'
