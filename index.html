@@ -122,8 +122,18 @@
         import {getLevels} from './levels.js'
         const levels = getLevels()
 
-        document.querySelector('#advance-scenes').addEventListener('click', function(){grid1(true)})
-        document.querySelector('#back-scenes').addEventListener('click', function(){grid1(false)})
+        document.querySelector('#advance-scenes').addEventListener('click', function(){
+            setTimeout(next, 250)
+            function next(){
+                grid1(true)
+            }
+        })
+        document.querySelector('#back-scenes').addEventListener('click', function(){
+            setTimeout(prev, 250)
+            function prev(){
+                grid1(false)
+            }
+        })
 
         import {sceneTransition} from './animations.js'
 
