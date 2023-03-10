@@ -92,13 +92,15 @@
                 displayArrow()
             }
             function changeOrder(orientation){
-                if (orientation){
-                    start += 4
+                if (start >= 0 && start+4 <= levels.length){
+                    if (orientation){
+                        start += 4
+                    }
+                    else {
+                        start -= 4
+                    }
+                    go()
                 }
-                else {
-                    start -= 4
-                }
-                go()
             }
             function displayArrow(){
                 if (start == 0){
