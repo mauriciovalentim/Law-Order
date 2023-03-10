@@ -210,10 +210,10 @@ button:active {
     border-radius: 15%;
 }
 
-#scene1{
-    background-image: url(imagens/scene1-1.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-
+.icons {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*height: 100%;*/ 
 }

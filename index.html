@@ -75,11 +75,10 @@
                 {
                     if ((start+index+1) <= levels.length)
                     {
-                        item.style.backgroundColor = 'yellow'
+                        item.style.backgroundColor = 'blue'
                         item.style.backgroundImage = `url(${levels[0].drawning})`
                         item.style.backgroundRepeat = 'no-repeat'
-                        item.style.backgroundPosition = 'center center' 
-                        item.style.backgroundSize = 'auto'
+                        item.style.backgroundPosition = 'center center'
                         item.id = levels[start+index].id
                         item.addEventListener('click', goToScene)
                     }
