@@ -211,9 +211,9 @@ button:active {
 }
 
 .icons {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100%; 
+    background-color: blue;
+    background-image: url(animations/fire_animation/stand0.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
 }
