@@ -73,21 +73,17 @@
                 levelIcons.forEach(defineIcons)
                 function defineIcons(item, index)
                 {
+                    item.style.backgroundColor = 'blue'
                     if ((start+index+1) <= levels.length)
                     {
-                        /*item.style.backgroundColor = 'blue'*/
-                        /*item.style.backgroundImage = `url(${levels[0].drawning})`
-                        item.style.backgroundRepeat = 'no-repeat'
-                        item.style.backgroundPosition = 'center center'*/
-                        item.id = levels[start+index].id
                         item.addEventListener('click', goToScene)
                     }
                     else 
                     {
-                        item.removeEventListener('click', goToScene)
-                        item.style.background = 'rgba(199, 197, 197, 0.4)'
-                        /*item.style.backgroundSize = 'none'
+                        /*item.style.background = 'rgba(199, 197, 197, 0.4)'
+                        item.style.backgroundSize = 'none'
                         item.id = 'none'*/
+                        item.removeEventListener('click', goToScene)
                     }
                 }
                 displayArrow()

@@ -191,7 +191,7 @@ button:active {
     
 }
 
-#scenes > div > div {
+/*#scenes > div > div {
     width: 25vw;
     height: 25vw;
     max-width: 115px;
@@ -200,7 +200,22 @@ button:active {
     border-radius: 100%;
     border: 1px solid rgb(255, 255, 255);
     margin: auto;
+}*/
+
+.icons {
+    width: 25vw;
+    height: 25vw;
+    max-width: 115px;
+    max-height: 115px;
+    border: 1px solid white;
+    border-radius: 100%;
+    margin: auto;
+    /*background-color: blue;
+    background-image: url(animations/fire_animation/stand0.png);
+    background-size: contain;*/
 }
+
+
 
 #scenes > div > p {
     margin: 5px;
@@ -211,9 +226,5 @@ button:active {
 }
 
 .icons {
-    background-color: blue;
-    background-image: url(animations/fire_animation/stand0.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
+    
 }
