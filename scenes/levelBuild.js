@@ -1,5 +1,6 @@
 import {sceneTransition} from '../animations.js'
 import {getLevels} from '../levels.js'
+console.log(location.href)
 let id = window.location.href.split('?')[1]
 let level = getLevels(id)
 
@@ -53,6 +54,7 @@ function defineAnswers(item, index){
         }
     }
 }
+
 let canvas = document.querySelector('#animation')
 let context = canvas.getContext('2d')
 let imgHeight = canvas.height  / 100 * 100

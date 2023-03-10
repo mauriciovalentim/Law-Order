@@ -76,15 +76,9 @@
                     if ((start+index+1) <= levels.length)
                     {
                         item.style.backgroundColor = 'blue'
-
-                        //item.style.backgroundImage = `url(animations/fire_animation/stand0.png)` WORKED
-                        //item.style.backgroundImage = 'url('+'animations/fire_animation/stand0.png'+')' WORKED
-                        /*let anim = 'animations/fire_animation/stand0.png'
-                        item.style.backgroundImage = `url(${anim})` WORKED */
-                        item.style.backgroundImage = 'url('+levels[0].drawning+')'
-
-                        item.style.backgroundSize = 'contain'
-                        item.id = levels[index].id
+                        item.style.backgroundImage = 'url('+levels[0].icon+')'
+                        item.style.backgroundSize = 'cover'
+                        item.id = levels[0].id
                         item.addEventListener('click', goToScene)
                     }
                     else 
