@@ -75,8 +75,10 @@
                 {
                     item.style.backgroundColor = 'blue'
                     item.style.backgroundImage = 'url(animations/fire_animation/stand0.png)'
+                    item.style.backgroundSiza = 'contain'
                     if ((start+index+1) <= levels.length)
                     {
+                        item.id = '1'
                         item.addEventListener('click', goToScene)
                     }
                     else 
