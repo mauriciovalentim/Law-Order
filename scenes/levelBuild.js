@@ -1,6 +1,5 @@
 import {sceneTransition} from '../animations.js'
 import {getLevels} from '../levels.js'
-console.log(location.href)
 let id = window.location.href.split('?')[1]
 let level = getLevels(id)
 
@@ -71,13 +70,14 @@ function startAnimation()
 {
     let indice = 0
     let timeLapse = 0
+    let anim = true
     function animation()
     {
         if (indice < arrayImgs.length -1)
         {
             context.clearRect(0, 0, canvas.width, canvas.height)
             context.drawImage(arrayImgs[Math.ceil(indice)], canvas.width / 2 - (imgWidth) / 2, canvas.height-imgHeight, imgWidth, imgHeight + 5) 
-            indice += 0.10
+            indice += level.animVel
         }
         else 
         {
@@ -85,10 +85,15 @@ function startAnimation()
             timeLapse += 1
             if (timeLapse == 1)
             {
+                if (level.continueAnim===false){
+                    anim=false
+                }
                 endGameScreen()                  
             }
         }
-        requestAnimationFrame(animation)
+        if (anim===true){
+            requestAnimationFrame(animation)
+        }
     }
     function start(){
         requestAnimationFrame(animation)

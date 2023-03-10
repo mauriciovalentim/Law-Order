@@ -76,9 +76,9 @@
                     if ((start+index+1) <= levels.length)
                     {
                         item.style.backgroundColor = 'blue'
-                        item.style.backgroundImage = 'url('+levels[0].icon+')'
+                        item.style.backgroundImage = 'url('+levels[start+index].icon+')'
                         item.style.backgroundSize = 'cover'
-                        item.id = levels[0].id
+                        item.id = levels[index].id
                         item.addEventListener('click', goToScene)
                     }
                     else 
@@ -91,16 +91,15 @@
                 }
                 displayArrow()
             }
-            function changeOrder(orientation){
-                if (start >= 0 && start+4 <= levels.length){
-                    if (orientation){
-                        start += 4
-                    }
-                    else {
-                        start -= 4
-                    }
-                    go()
+            function changeOrder(orientation)
+            {
+                if (orientation){
+                    start += start+4<=levels.length?4:0
                 }
+                else {
+                    start -= start-4>=0?4:0
+                }
+                go()
             }
             function displayArrow(){
                 if (start == 0){
