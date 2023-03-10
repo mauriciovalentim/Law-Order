@@ -24,7 +24,7 @@ const levels = [
 
     {
         id: 1,
-        drawning: '../animations/fire_animation/stand0.png', 
+        drawning: 'animations/fire_animation/stand0.png', 
         imgs: imgGet('fire_animation', 3),
         question: 'Pedro foi recentemente contratado como estagiário e deve operar em um painel elétrico onde existem alguns componentes que necessitam de manutenção. No aparelho existem regiões do painel que estão expostas e em contato direto com o ar ainda há um problema com um dos cabos de alimentação que não está ligado diretamente ao terra do aparelho. O equipamento nunca teve manutenção preventiva, e sua última preditiva fora a 4 meses atrás; escolha a opção correta abaixo:',
         options: [{
