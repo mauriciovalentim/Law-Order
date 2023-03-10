@@ -73,11 +73,11 @@
                 levelIcons.forEach(defineIcons)
                 function defineIcons(item, index)
                 {
-                    item.style.backgroundColor = 'blue'
-                    item.style.backgroundImage = `url(animations/fire_animation/stand0.png)`
-                    item.style.backgroundSize = 'contain'
                     if ((start+index+1) <= levels.length)
                     {
+                        item.style.backgroundColor = 'blue'
+                        item.style.backgroundImage = `url(animations/fire_animation/stand0.png)`
+                        item.style.backgroundSize = 'contain'
                         item.id = '1'
                         item.addEventListener('click', goToScene)
                     }
