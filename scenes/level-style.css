@@ -161,6 +161,14 @@ main {
     transition: 2s;
     transition-timing-function: ease;
 }
+#points {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 0.3em;
+    font-size: 2em;
+}
 
 #game-over > #game-over-buttons {
     position: absolute;
@@ -178,6 +186,19 @@ main {
     }
     to {
         transform: translateX(0);
+        border: 3px solid white;
+        color: white;
+    }
+    
+}
+@keyframes slideInTop {
+    from {
+        border: 3px solid rgba(253, 253, 253, 0);
+        color: rgba(253, 253, 253, 0);
+        opacity: 0;
+    }
+    to {
+        transform: 1;
         border: 3px solid white;
         color: white;
     }
@@ -215,6 +236,16 @@ main {
     transition: transform 0.2s, color 0.1s, background-color 0.1s;
     animation-name: slideInLeft;
     animation-duration: 0.7s;
+    animation-timing-function: none;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+#game-over-buttons > #points {
+    transition: transform 0.2s, color 0.1s, background-color 0.1s;
+    animation-name: slideInTop;
+    animation-duration: 3s;
     animation-timing-function: none;
     animation-delay: 0s;
     animation-iteration-count: 1;

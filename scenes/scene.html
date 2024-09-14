@@ -1,56 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="level-style.css">
-    <title>Document</title>
-</head>
-<script src="levelBuild.js" type="module" defer></script>
-<body>
-    <main>
-        <div id="game-result">
-            <span id="positive" class="material-symbols-outlined">thumb_up</span>
-            <span id="negative" class="material-symbols-outlined">thumb_down</span>
-        </div>
-        
-        <div id="blackScreen"></div>
-        <div id="game-over">
-            <div id="game-over-buttons">
-                <span id="restart" class="material-symbols-outlined">restart_alt</span>
-                <span id="back-menu" class="material-symbols-outlined">home</span>
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="level-style.css" />
+        <title>Law & Order</title>
+    </head>
+    <script src="levelBuild.js" type="module" defer></script>
+    <body>
+        <main>
+            <div id="game-result">
+                <span id="positive" class="material-symbols-outlined"
+                    >thumb_up</span
+                >
+                <span id="negative" class="material-symbols-outlined"
+                    >thumb_down</span
+                >
             </div>
-        </div>
-        <article id="options">
-            <div class="question-box">
-                <p id="question"></p>
+
+            <div id="blackScreen"></div>
+            <div id="game-over">
+                <div id="game-over-buttons">
+                    <p id="points"></p>
+                    <span id="restart" class="material-symbols-outlined"
+                        >restart_alt</span
+                    >
+                    <span id="back-menu" class="material-symbols-outlined"
+                        >home</span
+                    >
+                </div>
             </div>
-            <div class="answer-box">
-                <div class="answer-n">1</div>
-                <div class="answer"></div>
-            </div>
-            <div class="answer-box">
-                <div class="answer-n">2</div>
-                <div class="answer"></div>
-            </div>
-            <div class="answer-box">
-                <div class="answer-n">3</div>
-                <div class="answer"></div>
-            </div>
-            <div class="answer-box">
-                <div class="answer-n">4</div>
-                <div class="answer"></div>
-            </div>
-        </article>
-        
-        <canvas id="animation"></canvas>
-    </main>
-    <!--<script type="module">
+            <article id="options">
+                <div class="question-box">
+                    <p id="question"></p>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-n">1</div>
+                    <div class="answer"></div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-n">2</div>
+                    <div class="answer"></div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-n">3</div>
+                    <div class="answer"></div>
+                </div>
+                <div class="answer-box">
+                    <div class="answer-n">4</div>
+                    <div class="answer"></div>
+                </div>
+            </article>
+
+            <canvas id="animation"></canvas>
+        </main>
+        <!--<script type="module">
         import {sceneTransition} from '../animations.js'
 
         //Passar como parametro
@@ -209,5 +230,5 @@
                 
         }
     </script>-->
-</body>
+    </body>
 </html>

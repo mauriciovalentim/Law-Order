@@ -1,189 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <title>Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <span id="back-page" class="material-symbols-outlined">arrow_back</span>
-    <main id="main">
-        <article id="start-menu">
-            <div>
-                <h1 id="title">O Nome</h1>
-                <span id="logo" class="material-symbols-outlined">engineering</span>
-                <button id="start" >Iniciar</button>
-            </div>
-        </article>
-        <article id="select-menu">
-            <div id="title-menu">
-                <h1>Cenas</h1>
-            </div>
-            <div id="scenes-menu">
-                <div id="prev-scenes">
-                    <span id="back-scenes" class="material-symbols-outlined">
-                        skip_previous
-                        </span>
-                </div>
-                <div id="scenes">
-                    <div>
-                        <div class="icons"></div>
-                        <p class="titles">Cena 1</p>
-                    </div>
-                    <div>
-                        <div class="icons"></div>
-                        <p class="titles">Cena 2</p>
-                    </div>
-                    <div>
-                        <div class="icons"></div>
-                        <p class="titles">Cena 3</p>
-                    </div>
-                    <div>
-                        <div class="icons"></div>
-                        <p class="titles">Cena 4</p>
-                    </div>
-                </div>
-                <div id="next-scenes">
-                    <span id="advance-scenes" class="material-symbols-outlined">
-                        skip_next
-                        </span>
-                </div>
-            </div>
-        </article>
-    </main>
-    <script type="module">
-        function grid(){
-            let start = 0
-            go()
-            function go()
-            {
-                let levelTitles = document.querySelectorAll('.titles')
-                let levelIcons = document.querySelectorAll('.icons')
-                levelTitles.forEach(define)
-                function define(item, index){
-                    item.textContent = `Cena ${start + index + 1}`
-                }
-                
-                levelIcons.forEach(defineIcons)
-                function defineIcons(item, index)
-                {
-                    if ((start+index+1) <= levels.length)
-                    {
-                        item.style.backgroundColor = 'blue'
-                        item.style.backgroundImage = 'url('+levels[start+index].icon+')'
-                        item.style.backgroundSize = 'cover'
-                        item.id = levels[index].id
-                        item.addEventListener('click', goToScene)
-                    }
-                    else 
-                    {
-                        item.style.background = 'rgba(199, 197, 197, 0.4)'
-                        item.style.backgroundImage = 'none'
-                        item.id = 'none'
-                        item.removeEventListener('click', goToScene)
-                    }
-                }
-                displayArrow()
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Law & Order</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main id="main">
+            <h1 id="title">Law & Order</h1>
+            <!-- <span id="logo" class="material-symbols-outlined">engineering</span> -->
+            <img id="logo" src="./imagens/scale-svgrepo-com.svg" alt="" />
+            <button id="start">Iniciar</button>
+        </main>
+        <script type="module">
+            import { sceneTransition } from "./animations.js";
+            document
+                .querySelector("#start")
+                .addEventListener("click", function () {
+                    ir(1);
+                });
+            function ir(id) {
+                sceneTransition("scenes/scene.html?" + id + "?" + 0);
             }
-            function changeOrder(orientation)
-            {
-                if (orientation){
-                    start += start+4<=levels.length?4:0
-                }
-                else {
-                    start -= start-4>=0?4:0
-                }
-                go()
-            }
-            function displayArrow(){
-                if (start == 0){
-                    document.querySelector('#back-scenes').style.display = 'none'
-                }
-                else {
-                    document.querySelector('#back-scenes').style.display = 'block'
-                }
-                if (start + 4 > levels.length-1){
-                    document.querySelector('#advance-scenes').style.display = 'none'
-                }
-                else {
-                    document.querySelector('#advance-scenes').style.display = 'block'
-                }
-            }
-            return changeOrder
-        }
-
-        import {getLevels} from './levels.js'
-        const levels = getLevels()
-
-        document.querySelector('#advance-scenes').addEventListener('click', function(){
-            setTimeout(next, 250)
-            function next(){
-                grid1(true)
-            }
-        })
-        document.querySelector('#back-scenes').addEventListener('click', function(){
-            setTimeout(prev, 250)
-            function prev(){
-                grid1(false)
-            }
-        })
-
-        import {sceneTransition} from './animations.js'
-
-        const grid1 = grid()
-        /*document.querySelector('#scene1').addEventListener('click', function(){ir()})*/
-        document.querySelector('#start').addEventListener('click', function(){mudar()})
-        
-        function goToScene(event){
-            ir(event.target.id)
-        }
-
-
-        let main = document.querySelector('#main')
-        let firstContent = document.querySelector('#start-menu')
-        let backPage = document.querySelector('#back-page')
-        backPage.addEventListener('click', function(){voltarPagina()})
-        let selectScenes = document.querySelector('#select-menu')
-        let startMenu = document.querySelector('#start-menu')
-        function ir(id)
-        {
-            sceneTransition('scenes/scene.html?'+id)
-        }
-        function mudar()
-        {
-            setTimeout(change, 200)
-            function change()
-            {
-                firstContent.style.display = 'none'
-                main.style.width = '100%'
-                main.style.height = '60%'
-                main.style.borderRadius = '0px'
-                main.style.boxShadow = '0px 2px 2px rgba(0, 0, 0, 0.3)'
-                backPage.style.display = 'inline-block'
-                selectScenes.style.display = 'block'
-                startMenu.style.display = 'none'
-            }
-        }
-        function voltarPagina()
-        {
-            setTimeout(changePage, 200)
-            function changePage()
-            {
-                firstContent.style.display = 'block'
-                main.style.width = '80%'
-                main.style.height = '50%'
-                main.style.borderRadius = '15px'
-                backPage.style.display = 'none'
-                selectScenes.style.display = 'none'
-                startMenu.style.display = 'block'
-            }
-        }
-    </script>
-</body>
+        </script>
+    </body>
 </html>
