@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 * {
     padding: 0px;
@@ -14,42 +14,89 @@ html {
     width: 100vw;
 }
 body {
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     height: 100%;
     width: 100%;
     background-color: #f1f8d1;
 }
 
+#button-container {
+    /* pointer-events: none; */
+    /* opacity: 0.5 ; */
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 0px 15px;
+    transition: opacity 1s ease;
+}
+
+#result {
+    text-align: center;
+}
+
+.answer-button {
+    font-size: 2.5em;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    color: white;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.answer-button:active {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#btn1,
+#answer-n1 {
+    background-color: rgb(0, 132, 240);
+}
+
+#btn2,
+#answer-n2 {
+    background-color: rgb(231, 231, 84);
+}
+
+#btn3,
+#answer-n3 {
+    background-color: rgb(253, 83, 61);
+}
+
+#btn4,
+#answer-n4 {
+    background-color: rgb(84, 218, 31);
+}
+
 #options > div {
     width: 100%;
     margin: 0px auto 5px auto;
-    
 }
 
 .question-box {
     height: 22%;
-    background-color: rgb(98, 141, 235);
+    /* background-color: rgb(98, 141, 235); */
+    background-color: black;
+    color: white;
     border-radius: 5px 1px 5px 1px;
-    padding: 11px;
-    
+    padding: 15px;
 }
-
-
 
 .answer-box {
     /*border: 1px solid black;*/
     height: 18%;
-    background-color: lightgreen;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    /* border: 0.5px solid black; */
     border-radius: 1px 5px 5px 5px;
     padding: 5px;
 }
 
-.answer-box:active {
+/* .answer-box:active {
     transform: translateY(1.5px);
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
     margin-bottom: 10px;
-}
+} */
 
 #question {
     font-size: 1rem;
@@ -68,8 +115,10 @@ body {
     text-align: center;
     height: 110%;
     width: 10%;
-    background-color: blueviolet;
-    color: rgb(253, 237, 191);
+    /* background-color: black; */
+    background-color: rgb(231, 231, 84);
+    /* color: rgb(253, 237, 191); */
+    color: white;
     margin: 0%;
     position: relative;
     top: -5px;
@@ -84,7 +133,7 @@ body {
     overflow-wrap: break-word;
     width: 87%;
     height: 100%;
-    vertical-align:top;
+    vertical-align: top;
     color: rgb(0, 0, 0);
     overflow-y: auto;
     text-align: justify;
@@ -134,8 +183,6 @@ main {
     /*background-color: yellow;*/ /*Apagar depois*/
 }
 
-
-
 #blackScreen {
     display: none;
     position: absolute;
@@ -146,7 +193,7 @@ main {
     left: 0px;
     top: 0px;
     transition: 1s;
-    transition-timing-function: ease; 
+    transition-timing-function: ease;
 }
 
 #game-over {
@@ -162,7 +209,7 @@ main {
     transition-timing-function: ease;
 }
 #points {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     color: white;
     border: 3px solid white;
     border-radius: 5px;
@@ -189,7 +236,6 @@ main {
         border: 3px solid white;
         color: white;
     }
-    
 }
 @keyframes slideInTop {
     from {
@@ -202,7 +248,6 @@ main {
         border: 3px solid white;
         color: white;
     }
-    
 }
 @keyframes slideInRight {
     from {
@@ -215,12 +260,11 @@ main {
         border: 3px solid white;
         color: white;
     }
-    
 }
 #game-over-buttons > .material-symbols-outlined {
     z-index: 15;
     display: none;
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
     color: rgba(255, 255, 255, 0);
     font-size: 7rem;
     text-align: center;
@@ -228,7 +272,7 @@ main {
     border-radius: 15px;
     margin: 15px auto;
     color: white;
-    
+
     /*transition: transform 0.1s, color 0.1s, background-color 0.1s;*/
 }
 
@@ -264,7 +308,6 @@ main {
     animation-fill-mode: none;
 }
 
-
 /*Falta testar a melhor interação*/
 
 #game-over-buttons > .material-symbols-outlined:active {
@@ -282,7 +325,6 @@ main {
         width: 100px;
         height: 100px;
     }
-    
 }
 @keyframes closeIcon {
     from {
@@ -293,7 +335,6 @@ main {
         width: 100px;
         height: 100px;
     }
-    
 }
 @keyframes openFont {
     from {
@@ -302,7 +343,6 @@ main {
     to {
         font-size: 5rem;
     }
-    
 }
 
 @keyframes closeFont {
@@ -312,7 +352,6 @@ main {
     to {
         font-size: 5rem;
     }
-    
 }
 
 div#game-result {
@@ -326,24 +365,21 @@ div#game-result {
     position: absolute;
     transition: transform 0.1s, color 0.1s, background-color 0.1s;
     animation-name: openIcon;
-    animation-duration: 0.30s;
+    animation-duration: 0.3s;
     animation-timing-function: none;
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: none;
-    
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
 }
-
-
 
 div#game-result > .material-symbols-outlined {
     display: none;
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
     font-size: 5rem;
     position: absolute;
     top: 50%;
@@ -351,7 +387,7 @@ div#game-result > .material-symbols-outlined {
     transform: translate(-50%, -50%);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     transition: transform 0.1s, color 0.1s, background-color 0.1s;
-    animation-duration: 0.30s;
+    animation-duration: 0.3s;
     animation-timing-function: none;
     animation-delay: 0s;
     animation-iteration-count: 1;
@@ -362,7 +398,6 @@ div#game-result > .material-symbols-outlined {
 div#game-result > #positive {
     animation-name: openFont;
     color: rgb(20, 219, 47);
-    
 }
 div#game-result > #negative {
     animation-name: closeFont;
