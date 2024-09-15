@@ -28,6 +28,7 @@ function btnAction(button, index) {
         //travar botões
         btnContainer.style.pointerEvents = "none";
         btnContainer.style.opacity = "0.5";
+
         if (index + 1 === levels[id].rightOption) {
             //ganhar
             setTimeout(() => {
@@ -45,7 +46,7 @@ function btnAction(button, index) {
                         endGame();
                     }
                 }, 2000);
-            }, 3000);
+            }, 2000);
 
             //verificar se ainda há perguntas
             //caso sim
@@ -55,27 +56,22 @@ function btnAction(button, index) {
             //ir para a tela de fim de jogo
         } else {
             //perder
-            id += 1;
-            if (levels[id]) {
+            setTimeout(() => {
+                id += 1;
+                answerBoxs[index].style.backgroundColor =
+                    "rgb(253, 83, 61, 0.75)";
                 setTimeout(() => {
-                    answerBoxs[index].style.backgroundColor =
-                        "rgb(253, 83, 61, 0.75)";
-                    points += 1;
-                    id += 1;
-                    setTimeout(() => {
-                        if (levels[id]) {
-                            btnContainer.style.pointerEvents = "auto";
-                            btnContainer.style.opacity = "1";
-                            answerBoxs[index].style.backgroundColor = "white";
-                            setLevel();
-                        } else {
-                            endGame();
-                        }
-                    }, 2000);
-                }, 3000);
-            } else {
-                endGame();
-            }
+                    if (levels[id]) {
+                        btnContainer.style.pointerEvents = "auto";
+                        btnContainer.style.opacity = "1";
+                        answerBoxs[index].style.backgroundColor = "white";
+                        setLevel();
+                    } else {
+                        endGame();
+                    }
+                }, 2000);
+            }, 2000);
+
             //verificar se ainda há perguntas
             //caso sim
             //ir para a próxima pergunta
@@ -99,6 +95,9 @@ function endGame() {
         pointsLabel.style.display = "block";
         restartBtn.style.display = "block";
         menuBtn.style.display = "block";
+        pointsLabel.style.opacity = 1;
+        restartBtn.style.opacity = 1;
+        menuBtn.style.opacity = 1;
     }
 
     menuBtn.addEventListener("click", () => {

@@ -291,35 +291,41 @@ main {
 }
 
 #game-over-buttons > #restart {
-    transition: transform 0.2s, color 0.1s, background-color 0.1s;
-    animation-name: slideInLeft;
-    animation-duration: 0.7s;
+    /* transition: transform 0.2s, color 0.1s, background-color 0.1s; */
+    /* animation-name: slideInLeft; */
+    /* animation-duration: 0.7s;
     animation-timing-function: none;
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-direction: normal;
-    animation-fill-mode: none;
+    animation-fill-mode: none; */
+    opacity: 0;
+    transition: opacity 3s ease;
 }
 #game-over-buttons > #points {
-    transition: transform 0.2s, color 0.1s, background-color 0.1s;
-    animation-name: slideInTop;
-    animation-duration: 3s;
+    /* transition: transform 0.2s, color 0.1s, background-color 0.1s; */
+    /* animation-name: slideInTop; */
+    /* animation-duration: 3s;
     animation-timing-function: none;
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-direction: normal;
-    animation-fill-mode: none;
+    animation-fill-mode: none; */
+    opacity: 0;
+    /* transition: opacity 1s ease; */
 }
 
 #game-over-buttons > #back-menu {
-    transition: transform 0.2s, color 0.1s, background-color 0.1s;
-    animation-name: slideInRight;
-    animation-duration: 0.7s;
+    /* transition: transform 0.2s, color 0.1s, background-color 0.1s; */
+    /* animation-name: slideInRight; */
+    /* animation-duration: 0.7s;
     animation-timing-function: none;
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-direction: normal;
-    animation-fill-mode: none;
+    animation-fill-mode: none; */
+    opacity: 0;
+    transition: opacity 3s ease;
 }
 
 /*Falta testar a melhor interação*/
