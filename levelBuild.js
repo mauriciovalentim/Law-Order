@@ -1,5 +1,5 @@
-import { sceneTransition } from "./animations.js";
-import { getLevels } from "./levels.js";
+import { sceneTransition } from "./data/animations.js";
+import { getLevels } from "./data/levels.js";
 
 let id = 0;
 let points = 0;
@@ -31,7 +31,8 @@ function btnAction(button, index) {
         if (index + 1 === levels[id].rightOption) {
             //ganhar
             setTimeout(() => {
-                answerBoxs[index].style.backgroundColor = "rgb(84, 218, 31)";
+                answerBoxs[index].style.backgroundColor =
+                    "rgb(84, 218, 31, 0.75)";
                 points += 1;
                 id += 1;
                 setTimeout(() => {
@@ -56,9 +57,22 @@ function btnAction(button, index) {
             //perder
             id += 1;
             if (levels[id]) {
-                setLevel();
-                btnContainer.style.pointerEvents = "auto";
-                btnContainer.style.opacity = "1";
+                setTimeout(() => {
+                    answerBoxs[index].style.backgroundColor =
+                        "rgb(253, 83, 61, 0.75)";
+                    points += 1;
+                    id += 1;
+                    setTimeout(() => {
+                        if (levels[id]) {
+                            btnContainer.style.pointerEvents = "auto";
+                            btnContainer.style.opacity = "1";
+                            answerBoxs[index].style.backgroundColor = "white";
+                            setLevel();
+                        } else {
+                            endGame();
+                        }
+                    }, 2000);
+                }, 3000);
             } else {
                 endGame();
             }
