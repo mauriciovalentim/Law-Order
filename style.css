@@ -30,6 +30,12 @@ body
     margin: auto;
 }
 
+#group {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+
 #title {
     text-align: center;
     color: white;

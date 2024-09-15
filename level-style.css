@@ -22,6 +22,11 @@ body {
     background-image: linear-gradient(to top, #49a09d, #5f2c82);
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 #button-container {
     /* pointer-events: none; */
     /* opacity: 0.5 ; */
@@ -425,4 +430,10 @@ div#game-result > #positive {
 div#game-result > #negative {
     animation-name: closeFont;
     color: rgb(245, 58, 58);
+}
+
+#myCanvas {
+    border: 1px solid black;
+    display: block;
+    margin: auto;
 }
