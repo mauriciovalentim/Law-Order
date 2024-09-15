@@ -33,14 +33,14 @@ function btnAction(button, index) {
             //ganhar
             setTimeout(() => {
                 answerBoxs[index].style.backgroundColor =
-                    "rgb(84, 218, 31, 0.75)";
+                    "rgb(84, 218, 31, 0.5)";
                 points += 1;
                 id += 1;
                 setTimeout(() => {
                     if (levels[id]) {
                         btnContainer.style.pointerEvents = "auto";
                         btnContainer.style.opacity = "1";
-                        answerBoxs[index].style.backgroundColor = "white";
+                        answerBoxs[index].style.backgroundColor = "rgba(0, 0, 0, 0.3)";
                         setLevel();
                     } else {
                         endGame();
@@ -59,12 +59,12 @@ function btnAction(button, index) {
             setTimeout(() => {
                 id += 1;
                 answerBoxs[index].style.backgroundColor =
-                    "rgb(253, 83, 61, 0.75)";
+                    "rgb(253, 83, 61, 0.5)";
                 setTimeout(() => {
                     if (levels[id]) {
                         btnContainer.style.pointerEvents = "auto";
                         btnContainer.style.opacity = "1";
-                        answerBoxs[index].style.backgroundColor = "white";
+                        answerBoxs[index].style.backgroundColor = "rgba(0, 0, 0, 0.3)";
                         setLevel();
                     } else {
                         endGame();
