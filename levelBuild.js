@@ -1,5 +1,5 @@
-import { sceneTransition } from "../animations.js";
-import { getLevels } from "../levels.js";
+import { sceneTransition } from "./animations.js";
+import { getLevels } from "./levels.js";
 
 let id = 0;
 let points = 0;
@@ -8,6 +8,7 @@ let levels = getLevels();
 const questionText = document.querySelector("#question");
 const btnContainer = document.querySelector("#button-container");
 const answers = document.querySelectorAll(".answer");
+const answerBoxs = document.querySelectorAll(".answer-box");
 setLevel();
 
 function setLevel() {
@@ -29,15 +30,22 @@ function btnAction(button, index) {
         btnContainer.style.opacity = "0.5";
         if (index + 1 === levels[id].rightOption) {
             //ganhar
-            points += 1;
-            id += 1;
-            if (levels[id]) {
-                btnContainer.style.pointerEvents = "auto";
-                btnContainer.style.opacity = "1";
-                setLevel();
-            } else {
-                endGame();
-            }
+            setTimeout(() => {
+                answerBoxs[index].style.backgroundColor = "rgb(84, 218, 31)";
+                points += 1;
+                id += 1;
+                setTimeout(() => {
+                    if (levels[id]) {
+                        btnContainer.style.pointerEvents = "auto";
+                        btnContainer.style.opacity = "1";
+                        answerBoxs[index].style.backgroundColor = "white";
+                        setLevel();
+                    } else {
+                        endGame();
+                    }
+                }, 2000);
+            }, 3000);
+
             //verificar se ainda há perguntas
             //caso sim
             //ir para a próxima pergunta

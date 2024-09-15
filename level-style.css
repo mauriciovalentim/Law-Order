@@ -61,6 +61,7 @@ body {
 #btn3,
 #answer-n3 {
     background-color: rgb(253, 83, 61);
+    
 }
 
 #btn4,
@@ -90,6 +91,7 @@ body {
     /* border: 0.5px solid black; */
     border-radius: 1px 5px 5px 5px;
     padding: 5px;
+    transition: background-color 0.5 ease-in ;
 }
 
 /* .answer-box:active {
@@ -259,6 +261,18 @@ main {
         transform: translateX(0);
         border: 3px solid white;
         color: white;
+    }
+}
+
+@keyframes blinkAnimation {
+    0% {
+        background-color: rgb(84, 218, 31);
+    }
+    50% {
+        background-color: white;
+    }
+    100% {
+        background-color: rgb(84, 218, 31);
     }
 }
 #game-over-buttons > .material-symbols-outlined {
